@@ -1,4 +1,5 @@
 "use server";
+import { isAddress } from "@solana/addresses";
 // app/api/generate-wallets/route.ts
 
 import { Keypair } from "@solana/web3.js";
@@ -10,4 +11,9 @@ export async function getWallets(numWallets: number) {
     wallets.push(keypair.publicKey.toBase58());
   }
   return wallets;
+}
+
+export async function isValidAddress(address: string) {
+  const valid = isAddress(address);
+  return valid;
 }
