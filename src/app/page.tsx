@@ -2,7 +2,7 @@
 
 "use client";
 
-import { useActionState, useState } from "react";
+import { useState } from "react";
 import { getWallets } from "./actions";
 
 export default function Home() {
